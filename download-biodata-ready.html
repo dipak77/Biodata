@@ -1,0 +1,447 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+	<title>Marriage Biodata Maker - Download Marriage Biodata</title>
+	
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1">  
+	
+	<meta name="Description" content="Marriage Biodata Maker - Download Marriage Biodata">   
+	<meta name="keywords" content="marriage biodata, maker, marathi, hindi, english, download, image, pdf, doc" />  
+	<link type="image/x-icon" href="images/favicon.ico" rel="shortcut icon" />
+
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/style.css">
+<script>
+function downloadImage() {
+		debugger;
+	   <!-- var download = document.getelementbyid("download_jpg"); -->
+	   <!-- var canvas= document.getelementbyid("mycanvas"); -->
+
+ var canvas = document.getElementById("myCanvas");
+  image = canvas.toDataURL("image/png", 1.0).replace("image/png", "image/octet-stream");
+  var link = document.createElement('a');
+  link.download = "my-image.png";
+  link.href = image;
+  link.click();
+	 
+				
+	<!-- if(format=="jpg")	{ -->
+		
+		<!-- var download = document.getElementById("download_jpg"); -->
+		<!-- var image = document.getElementById("myCanvas").toDataURL("image/jpg") -->
+		<!-- .replace("image/jpg", "image/octet-stream"); -->
+		<!-- download.setAttribute("href", image); -->
+		
+	<!-- }else if(format=="png")	{ -->
+		
+		<!-- var download = document.getElementById("download_png"); -->
+		<!-- var image = document.getElementById("myCanvas").toDataURL("image/png") -->
+		<!-- .replace("image/png", "image/octet-stream"); -->
+		<!-- download.setAttribute("href", image); -->
+		
+	<!-- }else if(format=="pdf")	{ -->
+		
+		<!-- var canvas 	= document.getElementById("myCanvas"); -->
+		<!-- var imgData = canvas.toDataURL('image/png');     -->
+		<!-- var doc = new jsPDF('p', 'mm', [170,218]);  -->
+		<!-- doc.addImage(imgData, 'PNG', 4, 4);  -->
+		<!-- doc.save('marriage-biodata.pdf');  -->
+		
+	<!-- } -->
+	
+
+}
+</script>
+	<script> 
+
+
+$(document).ready(function()	{	
+            console.log("hello");
+			var biodata_font = new FontFace('BiodataFont', bfont);
+			console.log(biodata_font);
+			biodata_font.load().then(function(loaded_face) {
+				
+				document.fonts.add(loaded_face);
+				console.log("calling cimage()");
+				
+				cimage();
+				console.log("calling cimage() end");
+				
+			}).catch(function(error) {
+				// error occurred
+			});
+			
+		});
+		
+		
+		function cimage()	{
+		
+		   var result = {
+  "biodataId": "80969",
+  "rId": "RDA-1650711795-1512406164",
+  "lang": "MAR",
+  "theme": "6",
+  "fmt": "1",
+  "header1": "।। श्री गणेशाय नमः ।।",
+  "header2": "बायोडाटा",
+  "title1": "संपूर्ण नाव",
+  "desc1": "समाधान हरी नरडे ",
+  "title2": "जात",
+  "desc2": "भोई ",
+  "title3": "जन्मतारीख",
+  "desc3": "20-03-1994",
+  "title4": "जन्मवेळ",
+  "desc4": "सकाळी 4 ला ",
+  "title5": "जन्मठिकाण",
+  "desc5": "नशिराबाद ",
+  "title6": "देवक",
+  "desc6": "रेणुका माता",
+  "title7": "नाडी / गण",
+  "desc7": "",
+  "title8": "मंगळ",
+  "desc8": "नाही ",
+  "title9": "रंग",
+  "desc9": "गोरा ",
+  "title10": "रक्तगट",
+  "desc10": "B+",
+  "title11": "उंची",
+  "desc11": "5.6",
+  "title12": "शिक्षण",
+  "desc12": "12+ ITI + Mechanical Diploma",
+  "title13": "नोकरी / व्यवसाय",
+  "desc13": "शेती (10 एकर बागायती ) , इलेक्ट्रिशियन ",
+  "title14": "वडिलांचे नाव",
+  "desc14": "हरी सोनाजी नरडे ",
+  "title15": "व्यवसाय",
+  "desc15": "शेती , इलेक्ट्रिशियन ",
+  "title16": "संपर्क नंबर",
+  "desc16": "६२६६९९४७२५",
+  "title17": "आईचे नाव",
+  "desc17": "",
+  "title18": "भाऊ",
+  "desc18": "2",
+  "title19": "बहिणी",
+  "desc19": "0",
+  "title20": "मामा",
+  "desc20": "पन्नालाल सिताराम वाडिले ",
+  "title21": "नातेसंबंध",
+  "desc21": "वाडीले ,हरणे , बावणे , भामद्रे",
+  "title22": "",
+  "desc22": "",
+  "title23": "अपेक्षा",
+  "desc23": "मनमिळाऊ , समजदार ",
+  "title24": "राहण्याचा पत्ता",
+  "desc24": "नशिराबाद बोरी , ता: नेपानगर जिला: बऱ्हाणपूर ",
+  "title25": "",
+  "desc25": "",
+  "mobile": null,
+  "email": null,
+  "createdIP": "152.57.153.15",
+  "createdDateTime": "2022-04-23 16:33:15",
+  "txnId": "",
+  "txnAmt": null,
+  "txnDateTime": null
+}
+		
+		
+		console.log("calling cimage() started");
+	var button = document.getElementById("download_jpg");		
+	var canvas 	= document.getElementById("myCanvas");
+	var ctx 	= canvas.getContext("2d");
+	
+	ctx.fillStyle = "#ffffff";
+	ctx.fillRect(0, 0, canvas.width, canvas.height);
+	console.log("ThemeName: "+result["theme"]);
+	var theme = result["theme"];
+	var fmt = result["fmt"];
+	var lang  = result["lang"];
+	console.log("Lang: "+lang);
+	var bg = new Image();
+	//bg.crossOrigin = "anonymous";
+	bg.src = "theme/t-"+theme+".png";
+	
+	bg.onload = function()
+	{
+		ctx.drawImage(bg, 0, 0, 612, 792); // x,y,w,h
+				
+		ctx.fillStyle 	= "#000000";	
+		ctx.textAlign = "center";
+		
+		ctx.font      	 = "15px BiodataFont";						
+		ctx.fillText(result["header1"], 306, 50);
+		
+		ctx.font      	= "Bold 20px BiodataFont";
+		if(lang=="ENG") ctx.font      = "Bold 18px BiodataFont";
+		
+		ctx.fillText(result["header2"], 306, 80);
+		
+		var txnId = result["txnId"];		
+		if(txnId=="")	{
+			
+			ctx.fillStyle = "#949494";
+			ctx.font 	  = "25px BiodataFont";	
+			
+			ctx.fillText("", 306, 350);
+			ctx.fillText("", 306, 550);
+					
+		}
+		ctx.fillStyle 	= "#000000";
+		ctx.textAlign = "left";
+		
+		/*ctx.font 	  	= "12px BiodataFont";		
+		ctx.fillText("ramanudesignart.com", 230, 750);*/
+		
+		var y = 85;
+		for(var i=1;i<=25;i++)	{
+			
+			if(fmt==1)	{
+				
+				var title 	= result["title"+i];
+				var desc  	= result["desc"+i];						
+								
+				if(desc!="")	{
+					
+					y = y+26;
+					
+					ctx.font      = "Bold 18px BiodataFont";
+					if(lang=="ENG") ctx.font      = "Bold 16px BiodataFont";
+					
+					ctx.fillText(title, 50, y);
+					
+					ctx.font      = "18px BiodataFont";	
+					if(lang=="ENG") ctx.font      = "16px BiodataFont";
+					
+					ctx.fillText(":", 175, y);
+					ctx.fillText(desc, 190, y);
+				
+				}
+				
+			}else if(fmt==2)	{
+				
+				var title 	= result["title"+i];
+				var desc  	= result["desc"+i];	
+
+				if(lang=="MAR")	{
+					
+					if(i==1)	{
+						y = y+24;
+						ctx.font      = "Bold 17px BiodataFont";
+						ctx.fillText("स्वतःबद्दल माहिती", 50, y);	
+						y = y+2;
+					}else if(i==14)	{
+						y = y+26;
+						ctx.font      = "Bold 17px BiodataFont";
+						ctx.fillText("कौटुंबिक माहिती", 50, y);
+						y = y+2;
+					}		
+					
+				}else if(lang=="HIN")	{
+					
+					if(i==1)	{
+						y = y+24;
+						ctx.font      = "Bold 17px BiodataFont";
+						ctx.fillText("व्यक्तिगत विवरण", 50, y);
+						y = y+2;
+					}else if(i==14)	{
+						y = y+26;
+						ctx.font      = "Bold 17px BiodataFont";
+						ctx.fillText("पारिवारिक विवरण", 50, y);
+						y = y+2;
+					}
+				
+				}else if(lang=="ENG")	{
+					
+					if(i==1)	{
+						y = y+24;
+						ctx.font      = "Bold 15px BiodataFont";
+						ctx.fillText("Personal Details", 50, y);
+						y = y+2;
+					}else if(i==14)	{
+						y = y+26;
+						ctx.font      = "Bold 15px BiodataFont";
+						ctx.fillText("Family Details", 50, y);
+						y = y+2;
+					}
+				
+				}
+					
+				if(title!="" || desc!="")	{
+					
+					y = y+24;
+					
+					ctx.font      = "17px BiodataFont";
+					if(lang=="ENG") ctx.font      = "15px BiodataFont";
+					
+					ctx.fillText(title, 50, y);
+					ctx.fillText(":", 170, y);
+					
+					if(desc=="") desc="-";
+					
+					ctx.fillText(desc, 185, y);
+					
+				}
+								
+			}
+			
+		}
+			
+		var photo = "photos/"+result["rId"]+".png";
+	
+		if(photo!="")	{			
+			var image = new Image();
+			image.src = photo;
+			image.crossOrigin = "anonymous";
+			image.onload = function()	{
+						
+				ctx.drawImage(image, 412, 102, 150, 225);
+			}
+		}
+
+       
+		
+				
+	}
+	
+}
+
+
+		
+
+		var bfont  = 'url(fonts/NotoSansDevanagariRegular.ttf)';
+		if(lang == "ENG")	{
+			var bfont  = 'url(fonts/RobotoSlabRegular.ttf)';
+		}
+		
+
+function download(){
+	let downloadLink = document.createElement('a');
+	downloadLink.setAttribute('download', 'CanvasAsImage.png');
+	let canvas = document.getElementById('myCanvas');
+  let dataURL = canvas.toDataURL('image/png');
+  let url = dataURL.replace(/^data:image\/png/,'data:application/octet-stream');
+	downloadLink.setAttribute('href',url);
+	downloadLink.click();
+}
+
+	<!-- } -->
+	
+
+
+		
+		
+		
+				
+	</script>
+	
+	<script src="js/jspdf.min.js"></script>
+	<!-- <script src="js/function.js"></script> -->
+	
+</head>
+
+<body >
+
+	<div class="container text-right" style="background:#fff;">
+	<small style="font-size: 60% !important;">			
+		<a href="https://ramanudesignart.com/faq">FAQ</a>&nbsp;|&nbsp;
+		<a href="https://ramanudesignart.com/terms-of-services">Terms of Services</a>&nbsp;|&nbsp;
+		<a href="https://ramanudesignart.com/privacy-policy">Privacy Policy</a>&nbsp;|&nbsp;
+		<a href="https://ramanudesignart.com/refund-policy">Refund Policy</a>
+	</small>	
+</div>	
+	
+<div id="mySidenav" class="sidenav">
+	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> <hr>
+	
+	<a class="nav-link " href="https://ramanudesignart.com">Home</a> <hr>
+	<a class="nav-link " href="https://ramanudesignart.com/about-us">About Us</a> <hr>
+	<a class="nav-link " href="https://ramanudesignart.com/create-customize-biodata">Customize Biodata</a> <hr>
+	<a class="nav-link " href="https://ramanudesignart.com/download-biodata">Download Biodata</a> <hr>
+	<!-- <a class="nav-link" href="https://invitationmaker.in" target="_blank">Invitations</a> <hr> -->
+	<a class="nav-link " href="https://ramanudesignart.com/blog/">Blog</a> <hr>
+	<a class="nav-link " href="https://ramanudesignart.com/contact-us">Contact Us</a> <hr>
+	<a class="nav-link " href="https://ramanudesignart.com/cart">Cart <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+  <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+</svg></a>
+	
+</div>
+
+<div class="mobSide" onclick="openNav()" style="padding: 0.2rem 1rem;"><table width="100%"><td width="75%"><a href="https://ramanudesignart.com"><img src="https://ramanudesignart.com/images/logo.png" style="height: 45px;"></a></td><td width="25%" align="right" style="color:#fff !important;">&#9776;</td></table></div>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "200px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+
+	
+	<div class="container maindiv">
+
+		<div class="row">
+		
+			<div class="col-md-12 col-xs-12 text-center" style="padding: 0px;">
+			
+				<button id="downloadCanvas" onclick="download()" >download as image</button>			
+				<a id="download" href="#">
+				<button class="btn btn-warning" type="button" >Pay 55/- Rs for Download ( JPG, PNG, PDF )</button>
+				</a>
+				<br>					
+				Pay for remove watermark...			
+				<br>
+				
+				<a href="edit-marriage-biodata-in-marathi-RDA-1650711795-1512406164">
+				<button type="button">Edit Biodata</button>
+				<image 
+				</a>
+				
+				<select name="theme" id="theme" onchange="change_theme(this.value);">
+				
+					<option value="1" >Theme - 1</option><option value="2" >Theme - 2</option><option value="3" >Theme - 3</option><option value="4" >Theme - 4</option><option value="5" >Theme - 5</option><option value="6" selected>Theme - 6</option><option value="7" >Theme - 7</option><option value="8" >Theme - 8</option><option value="9" >Theme - 9</option><option value="10" >Theme - 10</option><option value="11" >Theme - 11</option><option value="12" >Theme - 12</option><option value="13" >Theme - 13</option><option value="14" >Theme - 14</option><option value="15" >Theme - 15</option><option value="16" >Theme - 16</option><option value="17" >Theme - 17</option><option value="18" >Theme - 18</option><option value="19" >Theme - 19</option><option value="20" >Theme - 20</option>					
+				</select>
+				
+				<select name="fmt" id="fmt" onchange="change_format(this.value);">
+				
+					<option value="1">Format 1</option>
+					<option value="2" >Format 2</option>
+					
+				</select>
+				
+				<br><br>
+				
+								
+				
+			</div>
+		
+			<div class="col-md-2 col-xs-12">&nbsp;</div>
+			
+			<div class="col-md-8 col-xs-12 text-center">
+				<canvas  id="myCanvas" width="612" height="792" style="box-shadow: 0px 0px 10px #88888824;"></canvas>
+			</div>	
+			
+			<div class="col-md-2 col-xs-12">&nbsp;</div>
+			
+			<div class="col-md-2 col-xs-12">&nbsp;</div>
+			<div class="col-md-8 col-xs-12"><br>1. Please check proper preview before payment.<br>2. After payment you can't edit your biodata.<br>3. If you made payment & not getting your biodata then please <a href="download-biodata">CLICK HERE</a>.<br>4. If any query then feel free to <a href="contact-us">Contact Us</a>.</div>
+			<div class="col-md-2 col-xs-12">&nbsp;</div>
+			
+		</div>
+	</div>
+	
+
+<div class="footerContainer text-center">
+	&copy; 2022 Ramanu Design Art<br><a href="https://wa.me/919699677663" style="color:#fff;"><img src="https://ramanudesignart.com/images/whatsapp.png" width="27px;"> 9699677663</a>
+</div>
+</body>
+</html>
