@@ -96,7 +96,7 @@
 	
 	<div class="container maindiv">
 
-	<form name="frm" id="frm" enctype="multipart/form-data">
+	<form name="frm" id="frm">
 
 	  <div class="row">
 	  
@@ -593,16 +593,19 @@
 		<!-- ****************** Crop Functionality ********************** -->	
 	<script src="js/croppie.js"></script>
 	<link rel="stylesheet" href="css/croppie.css" />	
-<script type="text/javascript" language="javascript">
-function redirect()
-{
-    window.location.href="download-biodata-ready.html";
-}
-</script>	
+
+
+	<script type="text/javascript" language="javascript">
+	function redirect()
+	{
+		window.location.href="download-biodata-ready.html";
+	}
+	</script>	
 	<script>
 		const userOrder = {};
 
 		function getValues(e) {
+		 event.preventDefault();
 		  // turn form elements object into an array
 		  const elements = Array.prototype.slice.call(e.target.elements);
 
@@ -612,11 +615,22 @@ function redirect()
 			  userOrder[el.name] = el.value;
 			}
 		  });
+		  
 
+		  userOrder.biodataId= Math.random().toString(16).slice(2);
+		  userOrder.rId= Math.random().toString(16).slice(2);
+		  userOrder.fmt= "1";
+		  userOrder.mobile= null,
+		  userOrder.email= null,
+		  userOrder.createdIP="111.111.111.111";
+		  userOrder.createdDateTime= "2022-04-23 16:33:15";
+		  userOrder.txnId= "";
+		  userOrder.txnAmt= null;
+		  userOrder.txnDateTime= null;
 		  // finally save to localStorage
 		  localStorage.setItem('userData', JSON.stringify(userOrder));
-		  
-		  window.location.href="download-biodata-ready.html";
+		  console.log(JSON.stringify(userOrder));
+		 // window.location.href="download-biodata-ready.html";
 		}  
 
 		document.getElementById("frm").addEventListener("submit", getValues);
