@@ -235,8 +235,8 @@ $(document).ready(function()	{
 	
 		if(photo!="")	{			
 			var image = new Image();
-			image.src = photo;
-			image.crossOrigin = "anonymous";
+			image.src = result["photoImage"];
+			//image.crossOrigin = "anonymous";
 			image.onload = function()	{
 						
 				ctx.drawImage(image, 412, 102, 150, 225);
