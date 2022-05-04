@@ -84,74 +84,9 @@ $(document).ready(function()	{
 		
 		function cimage()	{
 		
-		   var result = {
-  "biodataId": "80969",
-  "rId": "RDA-1650711795-1512406164",
-  "lang": "MAR",
-  "theme": "6",
-  "fmt": "1",
-  "header1": "।। श्री गणेशाय नमः ।।",
-  "header2": "बायोडाटा",
-  "title1": "संपूर्ण नाव",
-  "desc1": "समाधान हरी नरडे ",
-  "title2": "जात",
-  "desc2": "भोई ",
-  "title3": "जन्मतारीख",
-  "desc3": "20-03-1994",
-  "title4": "जन्मवेळ",
-  "desc4": "सकाळी 4 ला ",
-  "title5": "जन्मठिकाण",
-  "desc5": "नशिराबाद ",
-  "title6": "देवक",
-  "desc6": "रेणुका माता",
-  "title7": "नाडी / गण",
-  "desc7": "",
-  "title8": "मंगळ",
-  "desc8": "नाही ",
-  "title9": "रंग",
-  "desc9": "गोरा ",
-  "title10": "रक्तगट",
-  "desc10": "B+",
-  "title11": "उंची",
-  "desc11": "5.6",
-  "title12": "शिक्षण",
-  "desc12": "12+ ITI + Mechanical Diploma",
-  "title13": "नोकरी / व्यवसाय",
-  "desc13": "शेती (10 एकर बागायती ) , इलेक्ट्रिशियन ",
-  "title14": "वडिलांचे नाव",
-  "desc14": "हरी सोनाजी नरडे ",
-  "title15": "व्यवसाय",
-  "desc15": "शेती , इलेक्ट्रिशियन ",
-  "title16": "संपर्क नंबर",
-  "desc16": "६२६६९९४७२५",
-  "title17": "आईचे नाव",
-  "desc17": "",
-  "title18": "भाऊ",
-  "desc18": "2",
-  "title19": "बहिणी",
-  "desc19": "0",
-  "title20": "मामा",
-  "desc20": "पन्नालाल सिताराम वाडिले ",
-  "title21": "नातेसंबंध",
-  "desc21": "वाडीले ,हरणे , बावणे , भामद्रे",
-  "title22": "",
-  "desc22": "",
-  "title23": "अपेक्षा",
-  "desc23": "मनमिळाऊ , समजदार ",
-  "title24": "राहण्याचा पत्ता",
-  "desc24": "नशिराबाद बोरी , ता: नेपानगर जिला: बऱ्हाणपूर ",
-  "title25": "",
-  "desc25": "",
-  "mobile": null,
-  "email": null,
-  "createdIP": "152.57.153.15",
-  "createdDateTime": "2022-04-23 16:33:15",
-  "txnId": "",
-  "txnAmt": null,
-  "txnDateTime": null
-}
 		
-		
+		var result = JSON.parse(localStorage.getItem("userData"));
+		   console.log("calling cimage() started");
 		console.log("calling cimage() started");
 	var button = document.getElementById("download_jpg");		
 	var canvas 	= document.getElementById("myCanvas");
@@ -373,7 +308,7 @@ function download(){
 	
 </div>
 
-<div class="mobSide" onclick="openNav()" style="padding: 0.2rem 1rem;"><table width="100%"><td width="75%"><a href="https://ramanudesignart.com"><img src="https://ramanudesignart.com/images/logo.png" style="height: 45px;"></a></td><td width="25%" align="right" style="color:#fff !important;">&#9776;</td></table></div>
+
 
 <script>
 function openNav() {
@@ -393,7 +328,8 @@ function closeNav() {
 		
 			<div class="col-md-12 col-xs-12 text-center" style="padding: 0px;">
 			
-				<button id="downloadCanvas" onclick="download()" >download as image</button>			
+				<button id="downloadCanvas" onclick="download()" >download as PNG</button>
+                <button id="downloadCanvas" onclick="download()" >download as PNG</button>				
 				<a id="download" href="#">
 				<button class="btn btn-warning" type="button" >Pay 55/- Rs for Download ( JPG, PNG, PDF )</button>
 				</a>
