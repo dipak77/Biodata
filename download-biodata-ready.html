@@ -86,7 +86,8 @@ $(document).ready(function()	{
 		
 		
 		var result = JSON.parse(localStorage.getItem("userData"));
-		   console.log("calling cimage() started");
+		console.log("calling cimage() started");
+		   console.log(result);
 		console.log("calling cimage() started");
 	var button = document.getElementById("download_jpg");		
 	var canvas 	= document.getElementById("myCanvas");
@@ -101,7 +102,9 @@ $(document).ready(function()	{
 	console.log("Lang: "+lang);
 	var bg = new Image();
 	//bg.crossOrigin = "anonymous";
+	console.log("theme/t-"+theme+".png");
 	bg.src = "theme/t-"+theme+".png";
+	
 	
 	bg.onload = function()
 	{
