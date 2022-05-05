@@ -37,18 +37,10 @@
 
 <body>
 
-	<div class="container text-right" style="background:#fff;">
-	<small style="font-size: 60% !important;">			
-		<a href="faq.html">FAQ</a>&nbsp;|&nbsp;
-		<a href="terms-of-services.html">Terms of Services</a>&nbsp;|&nbsp;
-		<a href="privacy-policy.html">Privacy Policy</a>&nbsp;|&nbsp;
-		<a href="refund-policy.html">Refund Policy</a>
-	</small>	
-</div>	
 	
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="line-height: 1; padding:0px;"> 
     <div class="container">          
-		<a class="navbar-brand" href="index.html"><img src="images/logo.png" style="height: 45px;"></a> 
+		<a class="navbar-brand" href="index.html"><img src="images/logoNew.png" style="height: 89px;"></a> 
 				  
 		<div class="collapse navbar-collapse" id="collapse_Navbar"> 
 			<ul class="navbar-nav mr-auto"></ul>
@@ -627,6 +619,7 @@
 		  userOrder.txnId= "";
 		  userOrder.txnAmt= null;
 		  userOrder.txnDateTime= null;
+		  userOrder.theme="1";
 		  // finally save to localStorage
 		  localStorage.setItem('userData', JSON.stringify(userOrder));
 		  console.log(JSON.stringify(userOrder));
@@ -644,13 +637,13 @@
 		$image_crop = $('#image_demo').croppie({
 		enableExif: true,
 		viewport: {
-		  width:200,
-		  height:300,
+		  width:400,
+		  height:500,
 		  type:'square' //circle
 		},
 		boundary:{
-		  width:300,
-		  height:300
+		  width:500,
+		  height:500
 		}
 	  });
 

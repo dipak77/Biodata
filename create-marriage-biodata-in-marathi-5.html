@@ -2,8 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from ramanudesignart.com/create-marriage-biodata-in-marathi-5 by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 22 Apr 2022 04:35:00 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
   
 	<title>Marriage Biodata Maker - Create Marriage Biodata</title>
@@ -38,18 +37,10 @@
 
 <body>
 
-	<div class="container text-right" style="background:#fff;">
-	<small style="font-size: 60% !important;">			
-		<a href="faq.html">FAQ</a>&nbsp;|&nbsp;
-		<a href="terms-of-services.html">Terms of Services</a>&nbsp;|&nbsp;
-		<a href="privacy-policy.html">Privacy Policy</a>&nbsp;|&nbsp;
-		<a href="refund-policy.html">Refund Policy</a>
-	</small>	
-</div>	
 	
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark" style="line-height: 1; padding:0px;"> 
     <div class="container">          
-		<a class="navbar-brand" href="index.html"><img src="images/logo.png" style="height: 45px;"></a> 
+		<a class="navbar-brand" href="index.html"><img src="images/logoNew.png" style="height: 89px;"></a> 
 				  
 		<div class="collapse navbar-collapse" id="collapse_Navbar"> 
 			<ul class="navbar-nav mr-auto"></ul>
@@ -97,7 +88,7 @@
 	
 	<div class="container maindiv">
 
-	<form name="frm" method="post" onkeydown="return event.key != 'Enter';" action="#" enctype="multipart/form-data">
+	<form name="frm" id="frm">
 
 	  <div class="row">
 	  
@@ -111,7 +102,7 @@
 	  <div class="col-md-4 col-0"></div>
 	  <div class="col-md-8 col-xs-12">
 		<input type="text" class="form-control input-sm" name="header1" id="header1" value="।। श्री गणेशाय नमः ।।" onkeyup="javascript: return manageLength(this.id,52);">
-		<input type="hidden" name="theme" id="theme" value="5">
+		<input type="hidden" name="theme" id="theme" value="1">
 		<input type="hidden" name="lang" id="lang" value="MAR">		  
 	  </div>
 	  
@@ -571,12 +562,12 @@
 		
 		<div class="col-md-4 col-xs-12">&nbsp;</div>
 		<div class="col-md-8 col-xs-12">
-			<input type="submit" name="submit" class="btn btn-warning" value="Submit">
+			<input type="submit" name="submit" class="btn btn-warning" value="Submit" >
 		</div>
 		
 		<div class="col-md-12 col-xs-12 text-center">
 		
-			<br>5. bronze design corner border theme			
+			<br>1. white background theme			
 		</div>
 		
 		</div>
@@ -593,11 +584,14 @@
 
 		<!-- ****************** Crop Functionality ********************** -->	
 	<script src="js/croppie.js"></script>
-	<link rel="stylesheet" href="css/croppie.css" />			
+	<link rel="stylesheet" href="css/croppie.css" />	
+
+	
 	<script>
 		const userOrder = {};
 
 		function getValues(e) {
+		 event.preventDefault();
 		  // turn form elements object into an array
 		  const elements = Array.prototype.slice.call(e.target.elements);
 
@@ -607,16 +601,29 @@
 			  userOrder[el.name] = el.value;
 			}
 		  });
+		  
 
+		  userOrder.biodataId= Math.random().toString(16).slice(2);
+		  userOrder.rId= Math.random().toString(16).slice(2);
+		  userOrder.fmt= "1";
+		  userOrder.mobile= null,
+		  userOrder.email= null,
+		  userOrder.createdIP="111.111.111.111";
+		  userOrder.createdDateTime= "2022-04-23 16:33:15";
+		  userOrder.txnId= "";
+		  userOrder.txnAmt= null;
+		  userOrder.txnDateTime= null;
+		  userorder.theme="5";
 		  // finally save to localStorage
 		  localStorage.setItem('userData', JSON.stringify(userOrder));
-		  
-		  window.location.href="download-biodata-ready.html";
+		  console.log(JSON.stringify(userOrder));
+		 // window.location.href="download-biodata-ready.html";
 		}  
 
 		document.getElementById("frm").addEventListener("submit", getValues);
 		 
 	</script>
+
 	<script>
 		
 		$(document).ready(function(){
@@ -720,5 +727,5 @@
 </div>
 </body>
 
-<!-- Mirrored from ramanudesignart.com/create-marriage-biodata-in-marathi-5 by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 22 Apr 2022 04:35:00 GMT -->
+<!-- Mirrored from ramanudesignart.com/create-marriage-biodata-in-marathi-1 by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 22 Apr 2022 04:35:00 GMT -->
 </html>
