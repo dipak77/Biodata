@@ -20,6 +20,18 @@
 
 <link rel="stylesheet" href="css/style.css">
 <script>
+function change_theme(theme)	{
+			// READ STRING FROM LOCAL STORAGE
+			var retrievedObject = localStorage.getItem('userData');
+
+			// CONVERT STRING TO REGULAR JS OBJECT
+			var parsedObject = JSON.parse(retrievedObject);
+			parsedObject.theme=theme;
+			localStorage.setItem('userData', JSON.stringify(parsedObject));
+			window.location.reload();
+		}
+</script>
+<script>
 function downloadImage() {
 		debugger;
 	   <!-- var download = document.getelementbyid("download_jpg"); -->
@@ -158,6 +170,29 @@ $(document).ready(function()	{
 					if(lang=="ENG") ctx.font      = "16px BiodataFont";
 					
 					ctx.fillText(":", 175, y);
+					//nadi
+					if(i==7)
+					{ 
+					  var t=72;
+					  var desc72  	= result["desc"+t];
+					   
+					  ctx.fillText(desc+" / "+ desc72, 190, y);
+					}
+					
+					//brother/sister
+					if(i==18)
+					{ 
+					  var t=182;
+					  var desc182  	= result["desc"+t];
+					   
+					  ctx.fillText(desc+" {"+ desc182+"}", 190, y);
+					}else if(i==19)	{
+					  var t=192;
+					  var desc192  	= result["desc"+t];
+					   
+					  ctx.fillText(desc+" {"+ desc192+"}", 190, y);
+					}
+					else
 					ctx.fillText(desc, 190, y);
 				
 				}
@@ -298,14 +333,11 @@ function download(){
 <div id="mySidenav" class="sidenav">
 	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> <hr>
 	
-	<a class="nav-link " href="https://ramanudesignart.com">Home</a> <hr>
-	<a class="nav-link " href="https://ramanudesignart.com/about-us">About Us</a> <hr>
-	<a class="nav-link " href="https://ramanudesignart.com/create-customize-biodata">Customize Biodata</a> <hr>
-	<a class="nav-link " href="https://ramanudesignart.com/download-biodata">Download Biodata</a> <hr>
-	<!-- <a class="nav-link" href="https://invitationmaker.in" target="_blank">Invitations</a> <hr> -->
-	<a class="nav-link " href="https://ramanudesignart.com/blog/">Blog</a> <hr>
-	<a class="nav-link " href="https://ramanudesignart.com/contact-us">Contact Us</a> <hr>
-	<a class="nav-link " href="https://ramanudesignart.com/cart">Cart <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+	<a class="nav-link " href="#">Home</a> <hr>
+	<a class="nav-link " href="#">About Us</a> <hr>
+	<a class="nav-link " href="#">Blog</a> <hr>
+	<a class="nav-link " href="#">Contact Us</a> <hr>
+	<a class="nav-link " href="#">Cart <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
   <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
 </svg></a>
 	
@@ -333,14 +365,9 @@ function closeNav() {
 			
 				<button id="downloadCanvas" onclick="download()" >download as PNG</button>
                 <button id="downloadCanvas" onclick="download()" >download as PNG</button>				
-				<a id="download" href="#">
-				<button class="btn btn-warning" type="button" >Pay 55/- Rs for Download ( JPG, PNG, PDF )</button>
-				</a>
-				<br>					
-				Pay for remove watermark...			
-				<br>
 				
-				<a href="edit-marriage-biodata-in-marathi-RDA-1650711795-1512406164">
+				
+				<a href="#">
 				<button type="button">Edit Biodata</button>
 				<image 
 				</a>
@@ -349,13 +376,7 @@ function closeNav() {
 				
 					<option value="1" >Theme - 1</option><option value="2" >Theme - 2</option><option value="3" >Theme - 3</option><option value="4" >Theme - 4</option><option value="5" >Theme - 5</option><option value="6" selected>Theme - 6</option><option value="7" >Theme - 7</option><option value="8" >Theme - 8</option><option value="9" >Theme - 9</option><option value="10" >Theme - 10</option><option value="11" >Theme - 11</option><option value="12" >Theme - 12</option><option value="13" >Theme - 13</option><option value="14" >Theme - 14</option><option value="15" >Theme - 15</option><option value="16" >Theme - 16</option><option value="17" >Theme - 17</option><option value="18" >Theme - 18</option><option value="19" >Theme - 19</option><option value="20" >Theme - 20</option>					
 				</select>
-				
-				<select name="fmt" id="fmt" onchange="change_format(this.value);">
-				
-					<option value="1">Format 1</option>
-					<option value="2" >Format 2</option>
-					
-				</select>
+			
 				
 				<br><br>
 				
@@ -369,18 +390,13 @@ function closeNav() {
 				<canvas  id="myCanvas" width="612" height="792" style="box-shadow: 0px 0px 10px #88888824;"></canvas>
 			</div>	
 			
-			<div class="col-md-2 col-xs-12">&nbsp;</div>
-			
-			<div class="col-md-2 col-xs-12">&nbsp;</div>
-			<div class="col-md-8 col-xs-12"><br>1. Please check proper preview before payment.<br>2. After payment you can't edit your biodata.<br>3. If you made payment & not getting your biodata then please <a href="download-biodata">CLICK HERE</a>.<br>4. If any query then feel free to <a href="contact-us">Contact Us</a>.</div>
-			<div class="col-md-2 col-xs-12">&nbsp;</div>
 			
 		</div>
 	</div>
 	
 
 <div class="footerContainer text-center">
-	&copy; 2022 Ramanu Design Art<br><a href="https://wa.me/919699677663" style="color:#fff;"><img src="https://ramanudesignart.com/images/whatsapp.png" width="27px;"> 9699677663</a>
+	&copy; 2022 Marathi Biodta <br><a href="https://wa.me/9356868287" style="color:#fff;"><img src="images/whatsapp.png" width="27px;"> 9356868287</a>
 </div>
 </body>
 </html>

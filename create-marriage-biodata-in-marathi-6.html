@@ -190,7 +190,7 @@
 			<input type="hidden" name="title7" value="नाडी / गण">
 			
 						
-				<select class="form-control input-sm" name="desc71" style="width:50%;float:left;"> 
+				<select class="form-control input-sm" name="desc7" style="width:50%;float:left;"> 
 					<option value="-">-</option>
 										
 					<option value="आदी">आदी</option>
@@ -401,7 +401,7 @@
 			<input type="hidden" name="title18" value="भाऊ">
 			
 						
-				<select class="form-control input-sm" name="desc181"> 
+				<select class="form-control input-sm" name="desc18"> 
 					
 										
 					<option value="०">०</option>
@@ -441,7 +441,7 @@
 			<input type="hidden" name="title19" value="बहिणी">
 			
 						
-				<select class="form-control input-sm" name="desc191"> 
+				<select class="form-control input-sm" name="desc19"> 
 					
 										
 					<option value="०">०</option>
@@ -588,10 +588,21 @@
 
 
 	<script type="text/javascript" language="javascript">
-	function redirect()
-	{
-		window.location.href="download-biodata-ready.html";
-	}
+		function redirect()
+		{
+		
+			window.location.href="download-biodata-ready.html";
+		}
+		function change_theme(theme)	{
+			// READ STRING FROM LOCAL STORAGE
+			var retrievedObject = localStorage.getItem('userData');
+
+			// CONVERT STRING TO REGULAR JS OBJECT
+			var parsedObject = JSON.parse(retrievedObject);
+			parsedObject.theme=theme;
+			localStorage.setItem('userData', JSON.stringify(parsedObject));
+			window.location.reload();
+		}
 	</script>	
 	<script>
 		const userOrder = {};
@@ -729,7 +740,7 @@
 </div>
 
 <div class="footerContainer text-center">
-	&copy; 2022 Ramanu Design Art<br><a href="https://wa.me/919699677663" style="color:#fff;"><img src="images/whatsapp.png" width="27px;"> 9699677663</a>
+	&copy; 2022 Marathi Biodta <br><a href="https://wa.me/9356868287" style="color:#fff;"><img src="images/whatsapp.png" width="27px;"> 9356868287</a>
 </div>
 </body>
 
