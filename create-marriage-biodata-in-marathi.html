@@ -1,15 +1,17 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
   
-	<title>Marriage Biodata Maker - Download Marriage Biodata</title>
+	<title>Marriage Biodata Maker - Create Marriage Biodata</title>
 	
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">  
 	
-	<meta name="Description" content="Marriage Biodata Maker - Download Marriage Biodata">   
+	<meta name="Description" content="Marriage Biodata Maker - Create Marriage Biodata">   
 	<meta name="keywords" content="marriage biodata, maker, marathi, hindi, english, download, image, pdf, doc" />  
 	<link type="image/x-icon" href="images/favicon.ico" rel="shortcut icon" />
 
@@ -19,320 +21,23 @@
 <script src="js/bootstrap.min.js"></script>
 
 <link rel="stylesheet" href="css/style.css">
+
+<script async src="../pagead2.googlesyndication.com/pagead/js/f284c.txt?client=ca-pub-8559242050785365"
+     crossorigin="anonymous"></script>		 
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G54ZWGNSVP"></script>
 <script>
-function change_theme(theme)	{
-			// READ STRING FROM LOCAL STORAGE
-			var retrievedObject = localStorage.getItem('userData');
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-			// CONVERT STRING TO REGULAR JS OBJECT
-			var parsedObject = JSON.parse(retrievedObject);
-			parsedObject.theme=theme;
-			localStorage.setItem('userData', JSON.stringify(parsedObject));
-			window.location.reload();
-		}
-</script>
-<script>
-function downloadImage() {
-		debugger;
-	   <!-- var download = document.getelementbyid("download_jpg"); -->
-	   <!-- var canvas= document.getelementbyid("mycanvas"); -->
-
- var canvas = document.getElementById("myCanvas");
-  image = canvas.toDataURL("image/png", 1.0).replace("image/png", "image/octet-stream");
-  var link = document.createElement('a');
-  link.download = "my-image.png";
-  link.href = image;
-  link.click();
-	 
-				
-	<!-- if(format=="jpg")	{ -->
-		
-		<!-- var download = document.getElementById("download_jpg"); -->
-		<!-- var image = document.getElementById("myCanvas").toDataURL("image/jpg") -->
-		<!-- .replace("image/jpg", "image/octet-stream"); -->
-		<!-- download.setAttribute("href", image); -->
-		
-	<!-- }else if(format=="png")	{ -->
-		
-		<!-- var download = document.getElementById("download_png"); -->
-		<!-- var image = document.getElementById("myCanvas").toDataURL("image/png") -->
-		<!-- .replace("image/png", "image/octet-stream"); -->
-		<!-- download.setAttribute("href", image); -->
-		
-	<!-- }else if(format=="pdf")	{ -->
-		
-		<!-- var canvas 	= document.getElementById("myCanvas"); -->
-		<!-- var imgData = canvas.toDataURL('image/png');     -->
-		<!-- var doc = new jsPDF('p', 'mm', [170,218]);  -->
-		<!-- doc.addImage(imgData, 'PNG', 4, 4);  -->
-		<!-- doc.save('marriage-biodata.pdf');  -->
-		
-	<!-- } -->
-	
-
-}
-</script>
-	<script> 
-
-
-$(document).ready(function()	{	
-            console.log("hello");
-			var biodata_font = new FontFace('BiodataFont', bfont);
-			console.log(biodata_font);
-			biodata_font.load().then(function(loaded_face) {
-				
-				document.fonts.add(loaded_face);
-				console.log("calling cimage()");
-				
-				cimage();
-				console.log("calling cimage() end");
-				
-			}).catch(function(error) {
-				// error occurred
-			});
-			
-		});
-		
-		
-		function cimage()	{
-		
-		
-		var result = JSON.parse(localStorage.getItem("userData"));
-		console.log("calling cimage() started");
-		   console.log(result);
-		console.log("calling cimage() started");
-	var button = document.getElementById("download_jpg");		
-	var canvas 	= document.getElementById("myCanvas");
-	var ctx 	= canvas.getContext("2d");
-	
-	ctx.fillStyle = "#ffffff";
-	ctx.fillRect(0, 0, canvas.width, canvas.height);
-	console.log("ThemeName: "+result["theme"]);
-	var theme = result["theme"];
-	var fmt = result["fmt"];
-	var lang  = result["lang"];
-	console.log("Lang: "+lang);
-	var bg = new Image();
-	//bg.crossOrigin = "anonymous";
-	console.log("theme/t-"+theme+".png");
-	bg.src = "theme/t-"+theme+".png";
-	
-	
-	bg.onload = function()
-	{
-		ctx.drawImage(bg, 0, 0, 612, 792); // x,y,w,h
-				
-		ctx.fillStyle 	= "#000000";	
-		ctx.textAlign = "center";
-		
-		ctx.font      	 = "15px BiodataFont";						
-		ctx.fillText(result["header1"], 306, 50);
-		
-		ctx.font      	= "Bold 20px BiodataFont";
-		if(lang=="ENG") ctx.font      = "Bold 18px BiodataFont";
-		
-		ctx.fillText(result["header2"], 306, 80);
-		
-		var txnId = result["txnId"];		
-		if(txnId=="")	{
-			
-			ctx.fillStyle = "#949494";
-			ctx.font 	  = "25px BiodataFont";	
-			
-			ctx.fillText("", 306, 350);
-			ctx.fillText("", 306, 550);
-					
-		}
-		ctx.fillStyle 	= "#000000";
-		ctx.textAlign = "left";
-		
-		ctx.font 	  	= "28px BiodataFont";		
-		ctx.fillText("Design By RD Creative", 230, 710);
-		ctx.font 	  	= "28px BiodataFont";	
-	
-		ctx.fillText("rdmarathibiodata.com", 230, 410);
-		
-		var y = 85;
-		for(var i=1;i<=25;i++)	{
-			
-			if(fmt==1)	{
-				
-				var title 	= result["title"+i];
-				var desc  	= result["desc"+i];						
-								
-				if(desc!="")	{
-					
-					y = y+26;
-					
-					ctx.font      = "Bold 18px BiodataFont";
-					if(lang=="ENG") ctx.font      = "Bold 16px BiodataFont";
-					
-					ctx.fillText(title, 50, y);
-					
-					ctx.font      = "18px BiodataFont";	
-					if(lang=="ENG") ctx.font      = "16px BiodataFont";
-					
-					ctx.fillText(":", 175, y);
-					//nadi
-					if(i==7)
-					{ 
-					  var t=72;
-					  var desc72  	= result["desc"+t];
-					   
-					  ctx.fillText(desc+" / "+ desc72, 190, y);
-					}
-					
-					//brother/sister
-					if(i==18)
-					{ 
-					  var t=182;
-					  var desc182  	= result["desc"+t];
-					   
-					  ctx.fillText(desc+" {"+ desc182+"}", 190, y);
-					}else if(i==19)	{
-					  var t=192;
-					  var desc192  	= result["desc"+t];
-					   
-					  ctx.fillText(desc+" {"+ desc192+"}", 190, y);
-					}
-					else
-					ctx.fillText(desc, 190, y);
-				
-				}
-				
-			}else if(fmt==2)	{
-				
-				var title 	= result["title"+i];
-				var desc  	= result["desc"+i];	
-
-				if(lang=="MAR")	{
-					
-					if(i==1)	{
-						y = y+24;
-						ctx.font      = "Bold 17px BiodataFont";
-						ctx.fillText("स्वतःबद्दल माहिती", 50, y);	
-						y = y+2;
-					}else if(i==14)	{
-						y = y+26;
-						ctx.font      = "Bold 17px BiodataFont";
-						ctx.fillText("कौटुंबिक माहिती", 50, y);
-						y = y+2;
-					}		
-					
-				}else if(lang=="HIN")	{
-					
-					if(i==1)	{
-						y = y+24;
-						ctx.font      = "Bold 17px BiodataFont";
-						ctx.fillText("व्यक्तिगत विवरण", 50, y);
-						y = y+2;
-					}else if(i==14)	{
-						y = y+26;
-						ctx.font      = "Bold 17px BiodataFont";
-						ctx.fillText("पारिवारिक विवरण", 50, y);
-						y = y+2;
-					}
-				
-				}else if(lang=="ENG")	{
-					
-					if(i==1)	{
-						y = y+24;
-						ctx.font      = "Bold 15px BiodataFont";
-						ctx.fillText("Personal Details", 50, y);
-						y = y+2;
-					}else if(i==14)	{
-						y = y+26;
-						ctx.font      = "Bold 15px BiodataFont";
-						ctx.fillText("Family Details", 50, y);
-						y = y+2;
-					}
-				
-				}
-					
-				if(title!="" || desc!="")	{
-					
-					y = y+24;
-					
-					ctx.font      = "17px BiodataFont";
-					if(lang=="ENG") ctx.font      = "15px BiodataFont";
-					
-					ctx.fillText(title, 50, y);
-					ctx.fillText(":", 170, y);
-					
-					if(desc=="") desc="-";
-					
-					ctx.fillText(desc, 185, y);
-					
-				}
-								
-			}
-			
-		}
-			
-		var photo = "photos/"+result["rId"]+".png";
-	
-		if(photo!="")	{			
-			var image = new Image();
-			image.src = result["photoImage"];
-			//image.crossOrigin = "anonymous";
-			image.onload = function()	{
-						
-				ctx.drawImage(image, 332, 120, 230, 295);
-			}
-		}
-
-       
-		
-				
-	}
-	
-}
-
-
-		
-
-		var bfont  = 'url(fonts/NotoSansDevanagariRegular.ttf)';
-		if(lang == "ENG")	{
-			var bfont  = 'url(fonts/RobotoSlabRegular.ttf)';
-		}
-		
-
-function download(){
-	let downloadLink = document.createElement('a');
-	downloadLink.setAttribute('download', 'CanvasAsImage.png');
-	let canvas = document.getElementById('myCanvas');
-  let dataURL = canvas.toDataURL('image/png');
-  let url = dataURL.replace(/^data:image\/png/,'data:application/octet-stream');
-	downloadLink.setAttribute('href',url);
-	downloadLink.click();
-}
-
-	<!-- } -->
-	
-
-
-		
-		
-		
-				
-	</script>
-	
-	<script src="js/jspdf.min.js"></script>
-	<!-- <script src="js/function.js"></script> -->
-	
+  gtag('config', 'G-G54ZWGNSVP');
+</script>	
 </head>
 
-<script>
-function openNav() {
-  document.getElementById("mySidenav").style.width = "200px";
-}
-
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-}
-</script>
-
 <body>
+
+	
 <nav class="navbar fixed-top navbar-expand-sm bg-dark navbar-dark" style="line-height: 1; padding:0px;"> 
              
 		<svg align="center"	height="115px" id="eZwJ26Rxie81" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 700 300" shape-rendering="geometricPrecision" text-rendering="geometricPrecision"><defs><linearGradient id="eZwJ26Rxie82-fill" x1="0.603933" y1="0.102041" x2="0.620114" y2="0.985358" spreadMethod="pad" gradientUnits="objectBoundingBox" gradientTransform="translate(0 0)"><stop id="eZwJ26Rxie82-fill-0" offset="25%" stop-color="#81b4ff"/><stop id="eZwJ26Rxie82-fill-1" offset="79%" stop-color="#8a0064"/></linearGradient><linearGradient id="eZwJ26Rxie86-fill" x1="0" y1="0.5" x2="1" y2="0.5" spreadMethod="pad" gradientUnits="objectBoundingBox" gradientTransform="translate(0 0)"><stop id="eZwJ26Rxie86-fill-0" offset="0%" stop-color="#5b0091"/><stop id="eZwJ26Rxie86-fill-1" offset="100%" stop-color="#f42b98"/></linearGradient><radialGradient id="eZwJ26Rxie87-fill" cx="0" cy="0" r="0.5" spreadMethod="pad" gradientUnits="objectBoundingBox" gradientTransform="translate(0.5 0.5)"><stop id="eZwJ26Rxie87-fill-0" offset="6%" stop-color="#fff"/><stop id="eZwJ26Rxie87-fill-1" offset="100%" stop-color="#cf85ff"/></radialGradient><linearGradient id="eZwJ26Rxie813-fill" x1="0" y1="0.5" x2="1" y2="0.5" spreadMethod="pad" gradientUnits="objectBoundingBox" gradientTransform="translate(0 0)"><stop id="eZwJ26Rxie813-fill-0" offset="55%" stop-color="#f8cbf6"/><stop id="eZwJ26Rxie813-fill-1" offset="100%" stop-color="#50f8d1"/><stop id="eZwJ26Rxie813-fill-2" offset="100%" stop-color="#a39914"/><stop id="eZwJ26Rxie813-fill-3" offset="100%" stop-color="#002926"/><stop id="eZwJ26Rxie813-fill-4" offset="100%" stop-color="rgba(230,230,230,0)"/></linearGradient><linearGradient id="eZwJ26Rxie815-fill" x1="0" y1="0.5" x2="1" y2="0.5" spreadMethod="pad" gradientUnits="objectBoundingBox" gradientTransform="translate(0 0)"><stop id="eZwJ26Rxie815-fill-0" offset="0%" stop-color="#ceef03"/><stop id="eZwJ26Rxie815-fill-1" offset="100%" stop-color="#fff"/></linearGradient></defs><ellipse rx="228.510296" ry="62.90452" transform="matrix(-1.001237 0 0 0.677498 291.24861 254.597983)" fill="url(#eZwJ26Rxie82-fill)" stroke-width="0"/><g transform="matrix(-1.169747 0 0-1.228859 697.365157 373.630221)" paint-order="markers stroke fill"><g transform="matrix(.827444 0 0 0.614462 46.785175 144.827434)"><g transform="matrix(-1.08482 0 0-1 692.796667 247.320418)"><path d="M116.573326,142.184746C158.511238,108.302782,281.113164,11.521758,301.009144,86.55873s-43.945378-158.777455,173.155072,88.808244-99.041655,31.275711-214.554583,98.478584-92.47755,4.711725-143.036307-131.660812Z" transform="matrix(1.418302 0.021701 0.018498-1.208949-111.453041 364.663656)" paint-order="markers fill stroke" fill="url(#eZwJ26Rxie86-fill)" fill-rule="evenodd" stroke-width="0" stroke-dashoffset="1049.075724"/></g></g></g><text style="mix-blend-mode:screen" dx="0" dy="0" font-family="&quot;eZwJ26Rxie81:::Open Sans&quot;" font-size="24" font-weight="700" transform="matrix(7.112763-.015679 0.011606 5.264793 87.490277 159.819166)" fill="url(#eZwJ26Rxie87-fill)" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" stroke-dashoffset="110"><tspan y="0" font-weight="700" stroke-width="0"><![CDATA[R]]></tspan></text><text dx="0" dy="0" font-family="&quot;eZwJ26Rxie81:::Roboto&quot;" font-size="28" font-weight="400" transform="translate(150.195353 109.573069)" stroke-width="0"><tspan y="0" font-weight="400" stroke-width="0"><![CDATA[ ]]></tspan></text><text dx="0" dy="0" font-family="&quot;eZwJ26Rxie81:::Roboto&quot;" font-size="28" font-weight="400" transform="translate(175.741875 166.219702)" stroke-width="0"><tspan y="0" font-weight="400" stroke-width="0"><![CDATA[ ]]></tspan></text><text dx="0" dy="0" font-family="&quot;eZwJ26Rxie81:::Open Sans&quot;" font-size="28" font-weight="700" transform="matrix(4.51374-.03234 0.03327 4.643407 190.287034 161.401247)" fill="url(#eZwJ26Rxie813-fill)" stroke-width="0"><tspan y="0" font-weight="700" stroke-width="0"><![CDATA[D]]></tspan></text><text dx="0" dy="0" font-family="&quot;eZwJ26Rxie81:::Open Sans&quot;" font-size="28" text-decoration="underline" font-weight="700" transform="matrix(1.913972 0 0 2.611596 305.91029 143.562782)" fill="url(#eZwJ26Rxie815-fill)" stroke-width="0"><tspan y="0" font-weight="700" stroke-width="0"><![CDATA[Creative ]]></tspan></text><text dx="0" dy="0" font-family="&quot;eZwJ26Rxie81:::Roboto&quot;" font-size="28" font-weight="400" transform="translate(180.184747 155.112519)" stroke-width="0"><tspan y="0" font-weight="400" stroke-width="0"><![CDATA[ ]]></tspan></text><style><![CDATA[@font-face {font-family: 'eZwJ26Rxie81:::Open Sans';font-style: normal;font-weight: 700;font-stretch: normal;src: url(data:font/ttf;charset=utf-8;base64,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) format('truetype');}@font-face {font-family: 'eZwJ26Rxie81:::Roboto';font-style: normal;font-weight: 400;src: url(data:font/ttf;charset=utf-8;base64,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) format('truetype');}]]></style></svg>
@@ -365,59 +70,654 @@ function closeNav() {
 	</div>
 </nav>
 
+	
+	<div class="container maindiv" style="padding-top:100px">
 
-	<div class="container maindiv" style="padding-top:120px">
+	<form name="frm" id="frm">
 
-		<div class="row">
-		
-			<div class="col-md-12 col-xs-12 text-center" style="padding: 0px;">
+	  <div class="row">
+	  
+	  <div class="col-md-12 col-xs-12 text-center"><h1 class="text-center">Create Marriage Biodata</h1></div>
+	  
+	  <div class="col-md-3 col-0"></div>
+	  <div class="col-md-6 col-xs-12">
+	  
+	  <div class="row">
+  
+	  <div class="col-md-4 col-0"></div>
+	  <div class="col-md-8 col-xs-12">
+		<input type="text" class="form-control input-sm" name="header1" id="header1" value="।। श्री गणेशाय नमः ।।" onkeyup="javascript: return manageLength(this.id,52);">
+		<input type="hidden" name="theme" id="theme" value="1">
+		<input type="hidden" name="lang" id="lang" value="MAR">		  
+	  </div>
+	  
+	  <div class="col-md-4 col-xs-0"></div>
+	  <div class="col-md-8 col-xs-12">	
+		<input type="text" class="form-control input-sm" name="header2" id="header2" value="बायोडाटा" onkeyup="javascript: return manageLength(this.id,52);">
+	  </div>
+	  
+	  	
+	  <div class="col-md-4 col-xs-12">संपूर्ण नाव</div>
+	  <div class="col-md-8 col-xs-12">
+	  
+			<input type="hidden" name="title1" value="संपूर्ण नाव">
 			
+						
+				<input type="text" class="form-control input-sm" name="desc1" id="desc1">	
+			
+						
+	  </div>
+	  
+	  	
+	  <div class="col-md-4 col-xs-12">जात</div>
+	  <div class="col-md-8 col-xs-12">
+	  
+			<input type="hidden" name="title2" value="जात">
+			
+						
+				<input type="text" class="form-control input-sm" name="desc2" id="desc2">	
+			
+						
+	  </div>
+	  
+	  	
+	  <div class="col-md-4 col-xs-12">जन्मतारीख</div>
+	  <div class="col-md-8 col-xs-12">
+	  
+			<input type="hidden" name="title3" value="जन्मतारीख">
+			
+						
+				<input type="date" class="form-control input-sm" name="desc3" required>
+			
+						
+	  </div>
+	  
+	  	
+	  <div class="col-md-4 col-xs-12">जन्मवेळ</div>
+	  <div class="col-md-8 col-xs-12">
+	  
+			<input type="hidden" name="title4" value="जन्मवेळ">
+			
+						
+				<input type="text" class="form-control input-sm" name="desc4" id="desc4">	
+			
+						
+	  </div>
+	  
+	  	
+	  <div class="col-md-4 col-xs-12">जन्मठिकाण</div>
+	  <div class="col-md-8 col-xs-12">
+	  
+			<input type="hidden" name="title5" value="जन्मठिकाण">
+			
+						
+				<input type="text" class="form-control input-sm" name="desc5" id="desc5">	
+			
+						
+	  </div>
+	  
+	  	
+	  <div class="col-md-4 col-xs-12">देवक</div>
+	  <div class="col-md-8 col-xs-12">
+	  
+			<input type="hidden" name="title6" value="देवक">
+			
+						
+				<input type="text" class="form-control input-sm" name="desc6" id="desc6">	
+			
+						
+	  </div>
+	  
+	  	
+	  <div class="col-md-4 col-xs-12">नाडी / गण</div>
+	  <div class="col-md-8 col-xs-12">
+	  
+			<input type="hidden" name="title7" value="नाडी / गण">
+			
+						
+				<select class="form-control input-sm" name="desc7" style="width:50%;float:left;"> 
+					<option value="-">-</option>
+										
+					<option value="आदी">आदी</option>
+					<option value="मध्य">मध्य</option>
+					<option value="अंत्य">अंत्य</option>
+					
+																				
+				</select>
 
-				   <button type="button" class="btn btn-warning" id="downloadCanvas" onclick="download()" >download as PNG</button>
-
-
-				   <button type="button" class="btn btn-warning" id="downloadCanvas" onclick="download()"> download as PNG</button>
-				
-				
-				
-				<a href="#">
-				<button type="button" class="btn btn-success" onclick="window.history.back()">Edit Biodata</button>
-				<image 
-				</a>
-				<div class="btn-group">
-				  <button type="button" style="display: none;" class="btn btn-danger dropdown-toggle " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				   
-				  </button>
-				  <div class="dropdown-menu">
-					<a class="dropdown-item" href="#">Action</a>
-				  </div>
-				</div>
-												
-				<select class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" name="theme" id="theme" onchange="change_theme(this.value);">
-				
-					<option value="1" >Theme - 1</option><option value="2" >Theme - 2</option><option value="3" >Theme - 3</option><option value="4" >Theme - 4</option><option value="5" >Theme - 5</option><option value="6" selected>Theme - 6</option><option value="7" >Theme - 7</option><option value="8" >Theme - 8</option><option value="9" >Theme - 9</option><option value="10" >Theme - 10</option><option value="11" >Theme - 11</option><option value="12" >Theme - 12</option><option value="13" >Theme - 13</option><option value="14" >Theme - 14</option><option value="15" >Theme - 15</option><option value="16" >Theme - 16</option><option value="17" >Theme - 17</option><option value="18" >Theme - 18</option><option value="19" >Theme - 19</option><option value="20" >Theme - 20</option>					
+				<select class="form-control input-sm" name="desc72" style="width:50%;"> 
+					<option value="-">-</option>
+										
+					<option value="मनुष्य">मनुष्य</option>
+					<option value="राक्षस">राक्षस</option>
+					<option value="देव">देव</option>
+					
+																				
 				</select>
 			
+						
+	  </div>
+	  
+	  	
+	  <div class="col-md-4 col-xs-12">मंगळ</div>
+	  <div class="col-md-8 col-xs-12">
+	  
+			<input type="hidden" name="title8" value="मंगळ">
+			
+						
+				<select class="form-control input-sm" name="desc8"> 
+					
+										
+					<option value="नाही">नाही</option>
+					<option value="सौम्य">सौम्य</option>
+					<option value="तीव्र">तीव्र</option>
+					
+																				
+				</select>
 				
-				<br><br>
+						
+	  </div>
+	  
+	  	
+	  <div class="col-md-4 col-xs-12">रंग</div>
+	  <div class="col-md-8 col-xs-12">
+	  
+			<input type="hidden" name="title9" value="रंग">
+			
+						
+				<select class="form-control input-sm" name="desc9"> 
+					
+										
+					<option value="गोरा">गोरा</option>
+					<option value="निमगोरा">निमगोरा</option>
+					<option value="सावळा">सावळा</option>
+					<option value="गव्हाळ">गव्हाळ</option>
+					
+																				
+				</select>
+			
+						
+	  </div>
+	  
+	  	
+	  <div class="col-md-4 col-xs-12">रक्तगट</div>
+	  <div class="col-md-8 col-xs-12">
+	  
+			<input type="hidden" name="title10" value="रक्तगट">
+			
+						
+				<select class="form-control input-sm" name="desc10"> 
+					<option value="-">-</option>
+										
+					<option value="ए+">ए+</option>
+					<option value="ए-">ए-</option>
+					<option value="बी+">बी+</option>
+					<option value="बी-">बी-</option>
+					<option value="एबी+">एबी+</option>
+					<option value="एबी-">एबी-</option>
+					<option value="ओ+">ओ+</option>
+					<option value="ओ-">ओ-</option>
+					
+																				
+				</select>
+			
+			
+						
+	  </div>
+	  
+	  	
+	  <div class="col-md-4 col-xs-12">उंची</div>
+	  <div class="col-md-8 col-xs-12">
+	  
+			<input type="hidden" name="title11" value="उंची">
+			
+						
+				<select class="form-control input-sm" name="desc11"> 
+					
+										
+					<option value="४'५">४'५</option>
+					<option value="४'६">४'६</option>
+					<option value="४'७">४'७</option>
+					<option value="४'८">४'८</option>
+					<option value="४'९">४'९</option>
+					<option value="४'१०">४'१०</option>
+					<option value="४'११">४'११</option>
+					<option value="५'०">५'०</option>
+					<option value="५'१">५'१</option>
+					<option value="५'२">५'२</option>
+					<option value="५'३">५'३</option>
+					<option value="५'४">५'४</option>
+					<option value="५'५">५'५</option>
+					<option value="५'६">५'६</option>
+					<option value="५'७">५'७</option>
+					<option value="५'८">५'८</option>
+					<option value="५'९">५'९</option>
+					<option value="५'१०">५'१०</option>
+					<option value="५'११">५'११</option>
+					<option value="६'०">६'०</option>
+					<option value="६'१">६'१</option>
+					<option value="६'२">६'२</option>
+					<option value="६'३">६'३</option>
+					<option value="६'४">६'४</option>
+					<option value="६'५">६'५</option>
+					
+																				
+				</select>
+			
+						
+	  </div>
+	  
+	  	
+	  <div class="col-md-4 col-xs-12">शिक्षण</div>
+	  <div class="col-md-8 col-xs-12">
+	  
+			<input type="hidden" name="title12" value="शिक्षण">
+			
+						
+				<input type="text" class="form-control input-sm" name="desc12" id="desc12">	
+			
+						
+	  </div>
+	  
+	  	
+	  <div class="col-md-4 col-xs-12">नोकरी / व्यवसाय</div>
+	  <div class="col-md-8 col-xs-12">
+	  
+			<input type="hidden" name="title13" value="नोकरी / व्यवसाय">
+			
+						
+				<input type="text" class="form-control input-sm" name="desc13" id="desc13">	
+			
+						
+	  </div>
+	  
+	  	
+	  <div class="col-md-4 col-xs-12">वडिलांचे नाव</div>
+	  <div class="col-md-8 col-xs-12">
+	  
+			<input type="hidden" name="title14" value="वडिलांचे नाव">
+			
+						
+				<input type="text" class="form-control input-sm" name="desc14" id="desc14">	
+			
+						
+	  </div>
+	  
+	  	
+	  <div class="col-md-4 col-xs-12">व्यवसाय</div>
+	  <div class="col-md-8 col-xs-12">
+	  
+			<input type="hidden" name="title15" value="व्यवसाय">
+			
+						
+				<input type="text" class="form-control input-sm" name="desc15" id="desc15">	
+			
+						
+	  </div>
+	  
+	  	
+	  <div class="col-md-4 col-xs-12">संपर्क नंबर</div>
+	  <div class="col-md-8 col-xs-12">
+	  
+			<input type="hidden" name="title16" value="संपर्क नंबर">
+			
+						
+				<input type="number" class="form-control input-sm" name="desc16">
+			
+						
+	  </div>
+	  
+	  	
+	  <div class="col-md-4 col-xs-12">आईचे नाव</div>
+	  <div class="col-md-8 col-xs-12">
+	  
+			<input type="hidden" name="title17" value="आईचे नाव">
+			
+						
+				<input type="text" class="form-control input-sm" name="desc17" id="desc17">	
+			
+						
+	  </div>
+	  
+	  	
+	  <div class="col-md-4 col-xs-12">भाऊ</div>
+	  <div class="col-md-8 col-xs-12">
+	  
+			<input type="hidden" name="title18" value="भाऊ">
+			
+						
+				<select class="form-control input-sm" name="desc18"> 
+					
+										
+					<option value="०">०</option>
+					<option value="१">१</option>
+					<option value="२">२</option>
+					<option value="३">३</option>
+					<option value="४">४</option>
+					
+																				
+				</select>
 				
-								
+				</div>
+				<div class="col-md-4 col-xs-12">
+					विवाहित भाऊ						
+				</div>
+				<div class="col-md-8 col-xs-12">
+
+				<select class="form-control input-sm" name="desc182"> 
+					
+										
+					<option value="० विवाहित">०</option>
+					<option value="१ विवाहित">१</option>
+					<option value="२ विवाहित">२</option>
+					<option value="३ विवाहित">३</option>
+					<option value="४ विवाहित">४</option>
+					
+																				
+				</select>
+			
+						
+	  </div>
+	  
+	  	
+	  <div class="col-md-4 col-xs-12">बहिणी</div>
+	  <div class="col-md-8 col-xs-12">
+	  
+			<input type="hidden" name="title19" value="बहिणी">
+			
+						
+				<select class="form-control input-sm" name="desc19"> 
+					
+										
+					<option value="०">०</option>
+					<option value="१">१</option>
+					<option value="२">२</option>
+					<option value="३">३</option>
+					<option value="४">४</option>
+					
+																				
+				</select>
 				
-			</div>
+				</div>
+				<div class="col-md-4 col-xs-12">
+					विवाहित बहिणी						
+				</div>
+				<div class="col-md-8 col-xs-12">
+
+				<select class="form-control input-sm" name="desc192"> 
+					
+										
+					<option value="० विवाहित">०</option>
+					<option value="१ विवाहित">१</option>
+					<option value="२ विवाहित">२</option>
+					<option value="३ विवाहित">३</option>
+					<option value="४ विवाहित">४</option>
+					
+																				
+				</select>
+			
+						
+	  </div>
+	  
+	  	
+	  <div class="col-md-4 col-xs-12">मामा</div>
+	  <div class="col-md-8 col-xs-12">
+	  
+			<input type="hidden" name="title20" value="मामा">
+			
+						
+				<input type="text" class="form-control input-sm" name="desc20" id="desc20">	
+			
+						
+	  </div>
+	  
+	  	
+	  <div class="col-md-4 col-xs-12">नातेसंबंध</div>
+	  <div class="col-md-8 col-xs-12">
+	  
+			<input type="hidden" name="title21" value="नातेसंबंध">
+			
+						
+				<input type="text" class="form-control input-sm" name="desc21" id="desc21">	
+			
+						
+	  </div>
+	  
+	  	
+	  <div class="col-md-4 col-xs-12"></div>
+	  <div class="col-md-8 col-xs-12">
+	  
+			<input type="hidden" name="title22" value="">
+			
+						
+				<input type="text" class="form-control input-sm" name="desc22" id="desc22">	
+			
+						
+	  </div>
+	  
+	  	
+	  <div class="col-md-4 col-xs-12">अपेक्षा</div>
+	  <div class="col-md-8 col-xs-12">
+	  
+			<input type="hidden" name="title23" value="अपेक्षा">
+			
+						
+				<input type="text" class="form-control input-sm" name="desc23" id="desc23">	
+			
+						
+	  </div>
+	  
+	  	
+	  <div class="col-md-4 col-xs-12">राहण्याचा पत्ता</div>
+	  <div class="col-md-8 col-xs-12">
+	  
+			<input type="hidden" name="title24" value="राहण्याचा पत्ता">
+			
+						
+				<input type="text" class="form-control input-sm" name="desc24" id="desc24">	
+			
+						
+	  </div>
+	  
+	  	
+	  <div class="col-md-4 col-xs-12"></div>
+	  <div class="col-md-8 col-xs-12">
+	  
+			<input type="hidden" name="title25" value="">
+			
+						
+				<input type="text" class="form-control input-sm" name="desc25" id="desc25">	
+			
+						
+	  </div>
+	  
+	  	  
+		<div class="col-md-12 col-xs-12">&nbsp;</div>
 		
-			<div class="col-md-2 col-xs-12">&nbsp;</div>
-			
-			<div class="col-md-8 col-xs-12 text-center">
-				<canvas  id="myCanvas" width="612" height="792" style="box-shadow: 0px 0px 10px #88888824;"></canvas>
-			</div>	
-			
-			
+		<div class="col-md-4 col-xs-12">
+			<label>Photo</label>		
 		</div>
+		
+		<div class="col-md-8 col-xs-12">
+			<input type="file" id="photo" name="photo">
+			<div id="uploaded_image"><input type="hidden" name="photoImage" id="photoImage" value=""/></div>
+		</div>
+		
+		<div class="col-md-12 col-xs-12">&nbsp;</div>
+		
+		<div class="col-md-4 col-xs-12">&nbsp;</div>
+		<div class="col-md-8 col-xs-12">
+			<input type="submit" name="submit" class="btn btn-warning" value="Submit" onclick="redirect();">
+		</div>
+		
+		<div class="col-md-12 col-xs-12 text-center">
+		
+			<br>1. white background theme			
+		</div>
+		
+		</div>
+		
+		</div>
+
+		<div class="col-md-3 col-0"></div>
+		
+		</div>
+		
+	</form>
+
 	</div>
+
+		<!-- ****************** Crop Functionality ********************** -->	
+	<script src="js/croppie.js"></script>
+	<link rel="stylesheet" href="css/croppie.css" />	
+
+
+	<script type="text/javascript" language="javascript">
+	function redirect()
+	{
+		window.location.href="download-biodata-ready.html";
+	}
+	</script>	
+	<script>
+		const userOrder = {};
+
+		function getValues(e) {
+		 event.preventDefault();
+		  // turn form elements object into an array
+		  const elements = Array.prototype.slice.call(e.target.elements);
+
+		  // go over the array storing input name & value pairs
+		  elements.forEach((el) => {
+			if (el.type !== "submit") {
+			  userOrder[el.name] = el.value;
+			}
+		  });
+		  
+
+		  userOrder.biodataId= Math.random().toString(16).slice(2);
+		  userOrder.rId= Math.random().toString(16).slice(2);
+		  userOrder.fmt= "1";
+		  userOrder.mobile= null,
+		  userOrder.email= null,
+		  userOrder.createdIP="111.111.111.111";
+		  userOrder.createdDateTime= "2022-04-23 16:33:15";
+		  userOrder.txnId= "";
+		  userOrder.txnAmt= null;
+		  userOrder.txnDateTime= null;
+		  alert(localStorage.getItem('theme'));
+		  userOrder.theme=localStorage.getItem('theme');
+		  // finally save to localStorage
+		  localStorage.setItem('userData', JSON.stringify(userOrder));
+		  console.log(JSON.stringify(userOrder));
+		 // window.location.href="download-biodata-ready.html";
+		}  
+
+		document.getElementById("frm").addEventListener("submit", getValues);
+		 
+	</script>
+
+	<script>
+		
+		$(document).ready(function(){
+
+		$image_crop = $('#image_demo').croppie({
+		enableExif: true,
+		viewport: {
+		  width:300,
+		  height:390,
+		  type:'square' //circle
+		},
+		boundary:{
+		  width:400,
+		  height:400
+		}
+	  });
+
+	  $('#photo').on('change', function(){
+		var reader = new FileReader();
+		reader.onload = function (event) {
+		  $image_crop.croppie('bind', {
+			url: event.target.result
+		  }).then(function(){
+			console.log('jQuery bind complete');
+		  });
+		}
+		reader.readAsDataURL(this.files[0]);
+		$('#uploadimageModal').modal('show');
+	  });
+
+	  $('.crop_image').click(function(event){
+		$image_crop.croppie('result', {
+		  type: 'canvas',
+		  size: 'viewport'
+		}).then(function(response){ console.log("+++++"); console.log(response); console.log("*****");
+		  
+			document.getElementById('photoImage').value = response;		
+			$('#uploadimageModal').modal('hide');
+			
+		})
+	  });
+	  
+	  document.getElementById("header1").focus();
+		
+	});  
+
+	function manageLength(idd,maxLength) {
+
+		var field = document.getElementById(idd);
+		var string = field.value;
+
+		if (string.length > maxLength) {
+			field.value = string.substr(0, maxLength);
+			return false;
+		}
+	}
+
+	</script>
+		
+		
+	<div id="uploadimageModal" class="modal" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h1 class="modal-title">Upload & Crop Image</h1>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>        		
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-md-8 text-center">
+							  <div id="image_demo" style="width:310px; margin-top:5px"></div>
+							  <br/>
+							  <button class="btn btn-warning crop_image">Crop & Upload Image</button>
+						</div>  					
+					</div>
+				</div>      		
+			</div>
+		</div>
+	</div>	
+		<script type="text/javascript" src="js/transliteration-input.bundle.js"></script>
+	<script type="text/javascript" src="js/marathitext.js"></script>
+		
 	
+<div class="container bg-white pb-3">
+	<script async src="../pagead2.googlesyndication.com/pagead/js/f284c.txt?client=ca-pub-8559242050785365"
+     crossorigin="anonymous"></script>
+	<!-- Ad Unit 1 -->
+	<ins class="adsbygoogle"
+		 style="display:block"
+		 data-ad-client="ca-pub-8559242050785365"
+		 data-ad-slot="1651269692"
+		 data-ad-format="auto"
+		 data-full-width-responsive="true"></ins>
+	<script>
+		 (adsbygoogle = window.adsbygoogle || []).push({});
+	</script>	
+</div>
 
 <div class="footerContainer text-center">
 	&copy; 2022 Marathi Biodta <br><a href="https://wa.me/9356868287" style="color:#fff;"><img src="images/whatsapp.png" width="27px;"> 9356868287</a>
 </div>
 </body>
+
+<!-- Mirrored from ramanudesignart.com/create-marriage-biodata-in-marathi-1 by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 22 Apr 2022 04:35:00 GMT -->
 </html>
